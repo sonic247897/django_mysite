@@ -1,0 +1,35 @@
+<!-- DTL에서 아무 태그도 묶어주지 않으면 pre태그로 바껴서 맨 아래로 내려간다. -->
+<h2>리스트 반복문</h2>
+{% for data in my_list %}
+  <p>{{ forloop.counter }}. {{data}}</p>
+{% endfor %}
+<hr>
+
+<h2>문자열 비교</h2>
+{% if my_string == tmp %}
+  <p>일치합니다: {{ my_string }}</p>
+{% else %}
+  <p>일치하지 않습니다: {{ tmp }}</p>
+{% endif %}
+<hr>
+
+<h2>문자열 길이 확인</h2>
+{% if tmp|length <= 5 %}
+  <p>짧다. 길이: {{ tmp|length }}</p>
+{% elif tmp|length >= 10 %}
+  <p>길다. 길이: {{ tmp|length }}</p>
+{% else %}
+  <p>적당. 길이: {{ tmp|length }}</p>
+{% endif %}
+<hr>
+
+<h2>리스트 반복문/조건문</h2>
+{% for data in my_list %}
+  {% if data >= 90 %}
+    <p>{{ forloop.counter }}. {{ data }}점은 A</p>
+  {% elif data >= 50 %}
+    <p>{{ forloop.counter }}. {{ data }}점은 B</p>
+  {% else %}
+    <p>{{ forloop.counter }}. {{ data }}점은 C</p>
+  {% endif %}
+{% endfor %}
